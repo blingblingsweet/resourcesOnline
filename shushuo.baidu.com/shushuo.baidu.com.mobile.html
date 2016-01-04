@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width, minimum-scale=0.5, maximum-scale=1.0"/>
+    <title>百度移动分发报告2014H1</title>
+    
+    <link href="./shushuo.baidu.com.mobile.css" rel="stylesheet">
+</head>
+<body>
+    <div class="total-container" id="cover">
+        <img src="./shushuo.baidu.com.mobile.images/91_weixin_pic.jpg" alt="" width="1" style="display:none;">
+        <div class="logo">
+            <div class="img-r mobile-logo"></div>
+        </div>
+        <div class="title">
+            <img src="./shushuo.baidu.com.mobile.images/cover.png" alt="百度移动分发报告" width="230">
+        </div>
+        <div class='cols'>
+            <img src="./shushuo.baidu.com.mobile.images/cols.png" alt="柱状" height="645">
+        </div>
+        <footer>
+            <p style="color:white;opacity:.5;padding-bottom:10px;">滑动查看</p>
+            <p class="arrow-up"></p>
+        </footer>
+    </div>
+    <div class="total-container" id="inner">
+        <header id='main-title'>
+            <div class='content-outer'><span class="number"></span></div>
+            <div class='content-outer'><h1 class='title'></h1></div>
+        </header>
+        <div class="container" id='chart-area'>
+        </div>
+        <div id='bg'></div>
+        <footer>
+            <p><div class="img-r footer"></div></p>
+            <p class="arrow-up"></p>
+        </footer>
+        <div class="mask">
+                <div class="msg-box">
+                    <div class="msg-header">解读</div>
+                    <div class="msg-body">
+                    </div>
+                    <div class="msg-footer msg-ok">
+                        确定
+                    </div>
+                </div>
+        </div>  
+    </div>
+    <div class="total-container" id="back">
+        <div class="header">
+            <div class="img-r cover-s"></div>
+            <div class="share"></div>
+        </div>
+        <div id="more" class="more">
+            <div class="img-r more"></div>
+        </div>
+        <h2>联合撰写</h2>
+        <ul>
+            <li>百度移动云事业部</li>
+            <li>百度商业分析部</li>
+        </ul>
+        <h2>设计支持</h2>
+        <ul>
+            <li><div class="img-r mux"></div>百度移动用户体验部</li>
+        </ul>
+        <h2>技术支持</h2>
+        <ul id="shushuo">
+            <li><div class="img-r shushuo"></div>数说可视化团队@FEX</li>
+        </ul>
+    </div>
+    <div id="templates">
+        <div id="bubble-container">
+            <div id="bubble1" class="chart-container bubble" onselect="return false">
+                <h1>整体应用市场</h1>
+                <h2>用户量</h2>
+            </div><div id="bubble2" class="chart-container bubble" onselect="return false">
+                <h1>整体应用市场</h1>
+                <h2>分发量</h2>
+            </div>
+            <div class='legend'>
+                <div class='legend-block'>13Q4</div>
+                <div class='legend-block'>14Q2</div>
+            </div>
+            <h4 class='t2'>（13Q4 vs 14Q2，单位：个）</h4>
+        </div>
+        <div id="area-container">
+            <div id="area" class="chart-container area" onselect = "return false"></div>
+            <div class='legend' style="visibility:hidden;height:1px;">
+<!--                <div class='legend-block'>百度应用市场</div>
+                <div class='legend-block'>360</div>
+                <div class='legend-block'>应用宝</div>
+                <div class='legend-block'>其他</div> -->
+            </div>
+            <h3 class='t1'>Android整体及百度应用市场<img src="./shushuo.baidu.com.mobile.images/question2.png" alt="解释" width="34" class="btn description" idx="1" style="position: relative;top:14px;">日分发大盘</h3>
+            <h4 class='t2'>（13Q3 - 14Q2，单位：亿）</h4>
+        </div>
+        <div id="column2-container">
+            <div id="column2" class="chart-container column" onselect = "return false">
+            </div>
+<!--            <div class="mask-box">
+                <div class="img-r question1 btn description"  idx="0"></div>
+            </div> -->
+            <div class='legend'>
+                <div class='legend-block'>13Q4</div>
+                <div class='legend-block'>14Q2</div>
+            </div>
+            <h3 class='t1'>Android不同职业用户人均下载量</h3>
+            <h4 class='t2'>（13Q4 vs 14Q2，单位：个）</h4>
+        </div>
+        <div id="column3-container">
+            <div id="column3" class="chart-container column" onselect = "return false"></div>
+            <div class="legend">
+                <div class='legend-block'>13Q4</div>
+                <div class='legend-block'>14Q2</div>
+            </div>
+            <h3 class='t1'>百度平台首发软件、游戏平均下载量</h3>
+            <h4 class='t2'>（13Q4 vs 14Q2，单位：个）</h4>
+        </div>
+        <div id="donut0-container">
+            <ul class="qselect">
+                <li data-select='0'>13Q4</li><li data-select='1' class='active'>14Q2</li>
+            </ul>
+            <div id="donut" class="chart-container donut" onselect = "return false">
+                <div class="inner-shadow shadow"></div>
+                <div class="outer-shadow shadow"></div>
+                <div class="icon baidu"></div>
+                <div class="icon baiduzhushou"></div>
+                <div class="icon baiduzhushou"></div>
+                <div class="icon android"></div>
+                <div class="icon m91"></div>
+            </div>
+            <div class='legend'>
+                <div class='legend-block'>手机客户端</div>
+                <div class='legend-block'>手机网页</div>
+                <div class='legend-block'>PC客户端</div>
+                <div class='legend-block'>其他</div>
+            </div>
+            <h3 class='t1'>软件下载渠道分布</h3>
+            <h4 class='t2'>（13Q3 - 14Q2，单位：%）</h4>
+        </div>
+        <div id="radars">
+            <ul class="user-type">
+                <li data-idx='countryside'>农村用户</li><li data-idx='bluecollar'>城市打工族</li><li data-idx='student'>学生</li><li data-idx='whitecollar'>城市白领</li>
+            </ul>
+            <div class="row">
+                <h1>软件下载分布</h1>
+                <div class="radar-chart" id="radar-software"></div>
+            </div>
+            <div class="row">
+                <h1>游戏下载分布</h1>
+                <div class="radar-chart" id="radar-game"></div>
+            </div>
+        </div>
+        <div id="lights">
+            <div class="row">
+                <h2><div class="img-r user"></div>覆盖用户</h2>
+                <div class="round" id="round1"><h1>6亿+</h1></div>
+                <div class="img-r user light" id="light1"></div>
+            </div>
+
+            <div class="row">
+                <div class="round" id="round2">
+                    <h1>100万+</h1>
+                </div>
+                <h2><div class="img-r developer"></div>开发者</h2>
+                <div class="img-r light light2" id="light2"></div>
+            </div>
+            <div class="row">
+                <h2><div class="img-r daybrocast"></div>日分发</h2>
+                <div class="round" id="round3"><h1>1.3亿+</h1></div>
+                <div class="img-r light" id="light3"></div>
+            </div>
+        </div>
+        <div id="donut-container">
+            <div class="donut" onselect = "return false">
+                <div id="donut2" class="chart-container"></div>
+                <div class="center"></div>
+            </div>
+        </div>
+        <div id='text-container'>
+            <h1><span class='t-number'>1</span><span class='t-title'>用户结构年轻化</span></h1>
+            <p>学生群体在应用市场下载用户中的比例快速增加，年轻人成为最活跃的用户群体</p>
+            <h1><span class='t-number'>2</span><span class='t-title'>应用搜索内容化</span></h1>
+            <p>用户不仅可通过App名称搜索并下载应用，还能通过inApp搜索技术实现破壳检索</p>
+            <h1><span class='t-number'>3</span><span class='t-title'>下载行为移动化</span></h1>
+            <p>越来越多的用户通过手机应用商店下载App，使用PC客户端下载的用户比例持续萎缩</p>
+            <h1><span class='t-number'>4</span><span class='t-title'>开发者服务闭环化</span></h1>
+            <p>市场领先的分发平台已构建一站式服务闭环，打通开发、分发、运营、推广、变现等全流程</p>
+        </div>
+    </div>
+    <!--loading-->
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <!--loading-->
+    <script src="./shushuo.baidu.com.mobile.js"></script>
+</body>
+
+</html>

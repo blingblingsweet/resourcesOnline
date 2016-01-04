@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>数说－@百度FEX</title>
+
+    <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./shushuo.baidu.com.web.css" />
+    <style type="text/css">
+    /* fixed-positioning.css
+     * This file is NOT needed in order to use skrollr.
+     * The demo uses it and it may help you as well.
+     */
+    html, body {
+        width:100%;
+        height:100%;
+        padding:0;
+        margin:0;
+        overflow-x:hidden;
+    }
+
+    .skrollable {
+        /*
+         * First-level skrollables are positioned relative to window
+         */
+        position:fixed;
+
+        /*
+         * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+         */
+        z-index:100;
+    }
+
+    .skrollr-mobile .skrollable {
+        /*
+            May cause issues on Android default browser (see #331 on GitHub).
+        */
+        position:absolute;
+    }
+
+    .skrollable .skrollable {
+        /*
+         * Second-level skrollables are positioned relative their parent skrollable
+         */
+        position:absolute;
+    }
+
+    .skrollable .skrollable .skrollable {
+        /*
+         * Third-level (and below) skrollables are positioned static
+         */
+        position:static;
+    }
+    /**************d3.css*****************/
+    #examples {
+        background: #ddd;
+        height: 460px;
+        width: 85%;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        border-radius: 20px;
+        /*margin-right: auto;*/
+        margin-left: 160px;
+        margin-top: 130px;
+        background: rgba(0,0,0,0);
+
+    }
+
+    /*#examples:after, #examples:before {
+        content: "";
+        display: block;
+        width: 100%;
+        position: absolute;
+        background: rgb(255,0,0);
+        height: 16px;
+        z-index: 2;
+    }
+
+    #examples:before {
+        bottom: -16px;
+        box-shadow: 0px -8px 16px rgba(0,0,0,.3);
+    }
+
+    #examples:after {
+        top: -16px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,.3);
+    }*/
+
+
+    #examples-canvas{
+        -webkit-transform: translate(0, 0);
+        height: 575px;
+        top: -57px;
+        background: rgba(0,0,0,0);
+        left: -182px;
+        width: 1825px;
+    }
+    </style>
+	<script src="../js/lib/jquery-1.11.1.js"></script>
+
+</head>
+<body>
+    <div id="circle-layer" data-0="background-position: 50% 0%;" data-end="background-position: 50% 70%" style="background-size: 2400px;"></div>
+    <div id="point-layer" data-0="background-position: 50% 0%;" data-end="background-position: 50% 60%"></div>
+    <div id="background-layer" data-0="background-position: 50% 0%;" data-end="background-position: 50% 40%"></div>
+    <ul id="nav">
+        <div id="nav-logo"></div>
+        <li class="first-li">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</li>
+        <li>关于我们</li>
+        <li>案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例</li>
+        <li>联系我们</li>
+        <li class="nav-fex"><a href="http://fex.baidu.com" target="_blank">FEX</a></li>
+        <div id="cur-section"></div>
+    </ul>
+
+    <div id="first-section" data-0p="opacity[quadratic]: 1;" data-25p=" opacity: 0.2;">
+        <div id="logo-background"><div id="logo"></div></div>
+        <div id="slogan">专业数据可视化解决方案</div>
+        <div class="sub-slogan">为百度产品线解决可视化需求</div>
+        <div class="fex"><a href="http://fex.baidu.com" target="_blank">FEX</a></div>
+        <div id="down-arrow"></div>
+    </div>
+
+    <div id="second-section">
+        <div id="sea" data-25p="opacity: 0.2;" data-50p="opacity: 1;">
+            <div id="intro1-hover"><h3>用户至上</h3><div class="desc">你的需求就是我们最大的动力</div></div>
+            <div id="intro2-hover"><h3>极致体验</h3><div class="desc">打造极致用户体验与视觉冲击</div></div>
+            <div id="intro3-hover"><h3>专业解读</h3><div class="desc">为你的数据量身打造解决方案</div></div>
+            <div id="intro4-hover"><h3>全程服务</h3><div class="desc">专人专项，前期展现到后期工具，为你提供全流程服务</div></div>
+            <div class="intro" id="intro1"></div>
+            <div class="intro" id="intro2"></div>
+            <div class="intro" id="intro3"></div>
+            <div class="intro" id="intro4"></div>
+        </div>
+    </div>
+
+    <div id="third-section">
+        <div class="section-title">案&nbsp;&nbsp;&nbsp;&nbsp;例</div>
+        <!--  <div class="prj-block">
+        </div> -->
+        <div id="examples">
+            <div id="examples-canvas"></div>
+        </div>
+        <!--<div id="more">查看更多</div>-->
+    </div>
+
+    <div id="forth-section">
+        <div class="section-title">联系我们</div>
+        <div class="cnt-line">
+            <div class="cnt-wrap fix">
+                <div class="cnt email first-cnt">
+                    <div class="cnt-title">邮箱</div>
+                    <div class="cnt-detail"><a href="mailto:shushuo@baidu.com" onclick="javascript:;">shushuo@baidu.com</a></div>
+                </div>
+                <div class="cnt qq">
+                    <div class="cnt-title">QQ</div>
+                    <div class="cnt-detail">234589330</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-wrap">
+                <div class="cooperate-title">合作伙伴：</div>
+                <ul class="friend-wrap fix">
+                        <li class="friend-link baidu-bim">BIM营销研究院</li>
+                        <li class="friend-link baidu-map">百度地图</li>
+                        <li class="friend-link baidu-tieba">百度贴吧</li>
+                        <li class="friend-link baidu-brand">品牌数字资产榜</li>
+                        <li class="friend-link baidu-yun">百度云</li>
+                        <li class="friend-link baidu-daiyan">百度代言</li>
+                    </ul>
+                <div class="copyright">&copy;&nbsp;&nbsp;2014&nbsp;&nbsp;FEX@Baidu. All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scroll-sc" data-0="top:0px"></div>
+    <div id="skrollr-body"></div>
+
+
+    <script type="text/javascript" src="../../js/lib/skrollr.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.transit.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../skrollr-ie/dist/skrollr.ie.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var s = skrollr.init({
+            edgeStrategy: 'set',
+            smoothScrolling: true,
+            easing: {
+                WTF: Math.random,
+                inverted: function(p) {
+                    return 1-p;
+                }
+
+            }
+        });
+
+        $(function(){
+
+            /****************************** window 的 scroll事件和resize事件 *********************************/
+
+            var isInProcess = false,
+                section3num = 1, // 记录第三部分有几屏
+                scrollTimer;
+
+            /*
+             * 鼠标的scroll事件和键盘的keydown事件：实现滚屏，单个部分滚动时只响应一次
+             */
+            var scrollHandler = function(e, d) {
+
+                var direction = 0;  // -1：向下 1：向上
+
+                if (isInProcess) return;
+                isInProcess = true;
+                clearTimeout(scrollTimer);
+
+                if (e.type == 'keydown') {
+                    if (e.keyCode === 37 || e.keyCode === 38) direction = 1;  // 向上
+                    else if(e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 32) direction = -1;  // 向下
+                    else direction = 0;
+                } else {
+                    direction= e.deltaY;
+                }
+
+                s.animateTo(s.getScrollTop() - direction * $(window).height(), {
+                    duration: 800,
+                    easing: 'swing',
+                    done: function(){
+                        scrollTimer = setTimeout(function(){
+                            isInProcess = false;
+                        }, 0);
+
+                        setCurNav();
+                    }
+                });
+
+
+
+            };
+
+            function setCurNav(){
+                var sectionHeight = $(window).height();
+                var curSectionIndex = Math.ceil(s.getScrollTop()/sectionHeight-0.5);
+
+                $('#cur-section').transition({
+                    top: 71 + curSectionIndex*30 + 'px'
+                },{
+                    easing: 'ease'
+                });
+
+                $(document.body).trigger('scrollToIndex',curSectionIndex);
+            };
+
+
+
+            /*
+
+             * 窗口的resize事件：调整每个部分的高度（不包括第三部分）
+             */
+            var resizeSectionHandler = function(){
+                var sectionHeight = $(window).height();
+
+//                $.each($('#scroll-sc')[0].dataset, function(idx, ele){
+//                    $('#scroll-sc').removeAttr('data-' + idx );
+//                });
+//
+//                $('#scroll-sc')
+//                        .attr('data-0', 'top[swing]: 55px')
+//                        .attr('data-' + 1 * sectionHeight, 'top: 87px')
+//                        .attr('data-' + 2 * sectionHeight, 'top: 119px')
+//                        .attr('data-' + ((1 + section3num) * sectionHeight-1), 'top: 119px')
+//                        .attr('data-' + (2 + section3num) * sectionHeight, 'top: 151px');
+//                s.refresh($('#scroll-sc'));
+
+                var attrs = $('#scroll-sc')[0].attributes, i;
+                for (i = 0; i < attrs.length;) {
+                    if(attrs[i].name.substring(0, 5) == 'data-') {
+                        $('#scroll-sc')[0].removeAttribute(attrs[i].name);
+                    }
+                    else {
+                        i++;
+                    }
+                }
+
+                $('#scroll-sc').attr('data-0', 'top:0px');
+                $('#scroll-sc').attr('data-' + ((2 + section3num) * sectionHeight), 'top:0px');
+                s.refresh($('#scroll-sc'));
+
+                $('#first-section, #second-section, #forth-section').height(sectionHeight);
+                $('#third-section').height(section3num * sectionHeight);
+
+                var curSectionIndex = Math.ceil(s.getScrollTop()/sectionHeight-0.5);
+                s.setScrollTop(curSectionIndex * sectionHeight);
+                $('#cur-section').transition({
+                    top:71 + curSectionIndex*32 + 'px'
+                },{
+                    easing: 'ease'
+                });
+            };
+
+            /*
+             * Chrome 版本的 resize 事件
+             * 窗口的 resize 事件：调整第三部分的高度以及每个案例的大小
+             */
+            var resizeSection3Handler_ch = function(){
+                var sectionHeight = $(window).height(),
+                    sectionWidth = $(window).width(),
+                    ratio = Math.min(sectionHeight/1000, Math.min(sectionWidth, 976)/976);
+
+                var itemW = Math.floor(240 * ratio);
+                var itemH = Math.floor(280 * ratio);
+                $('.prj').width(itemW);
+                $('.prj').height(itemH);
+                $('.prj').css('background-size', itemW + 'px ' + itemH + 'px');
+                $('.prj').css('-webkit-mask-size', itemW + 'px ' + itemH + 'px');
+                $('.prj-hover').css('background-size', itemW + 'px ' + itemH + 'px');
+                $('.prj-hover').css('-webkit-mask-size', itemW + 'px ' + itemH + 'px');
+
+                $('.prj-wrap-odd').css('width', 3 * (itemW + 1) + 'px');
+                $('.prj-wrap-even').css('width', 4 * (itemW + 1) + 'px');
+                $('.prj-wrap-odd, .prj-wrap-even').css('height', itemH + 'px')
+                                                  .css('margin-top', -71 * ratio + 'px');
+            }
+
+            /*
+             * 非Chrome 版本的 resize 事件
+             * 窗口的 resize 事件：调整第三部分的高度以及每个案例的大小
+             */
+            var resizeSection3Handler_ff = function(){
+                var sectionHeight = $(window).height(),
+                    sectionWidth = $(window).width(),
+                    ratio = Math.min(sectionHeight/920, Math.min(sectionWidth, 976)/976);
+
+                var itemW = Math.floor(228 * ratio);
+                var itemH = Math.floor(228 * ratio);
+                var itemBgW = Math.floor(244 * ratio);
+                var itemBgH = Math.floor(280 * ratio);
+                var itemBorderW = Math.floor(8 * ratio);
+                $('.prj').width(itemW);
+                $('.prj').height(itemH);
+                $('.prj').css('background-size', itemBgW + 'px ' + itemBgH + 'px');
+                $('.prj').css('border-width', itemBorderW);
+                $('.prj-hover').css('background-size', itemBgW + 'px ' + itemBgH + 'px');
+
+                $('.prj-wrap-odd').css('width', 3 * (itemW + itemBorderW + 10) + 'px');
+                $('.prj-wrap-even').css('width', 4 * (itemW + itemBorderW + 10) + 'px');
+                $('.prj-wrap-odd, .prj-wrap-even').css('height', itemH + 'px')
+                        .css('margin-top', -(32 - itemBorderW * 2) * ratio + 'px');
+
+                return ratio;
+            }
+
+            /*
+            * 页面加载完成时候，改变导航到指定的位置
+            */
+            setTimeout(setCurNav, 100);
+
+
+            $(document).mousewheel(scrollHandler);
+            $(document).keydown(scrollHandler);
+            resizeSectionHandler();
+            if (navigator.userAgent.indexOf("Chrome") > 0 || navigator.userAgent.indexOf("Safari") > 0)
+                resizeSection3Handler_ch();
+            else
+                resizeSection3Handler_ff();
+
+
+            /*
+             * 左侧导航的 click 事件
+             */
+            $('#nav li').click(function(e){
+                var sectionHeight = $(window).height();
+                s.animateTo(($(e.target).index()-1) * $(window).height(), {
+                    duration: 800,
+                    easing: 'swing',
+                    done: setCurNav
+                });
+            });
+
+            /*
+            * 第一部分的向下箭头click事件
+            */
+            $('#down-arrow').click(function(e){
+                s.animateTo($(window).height(), {
+                    duration: 800,
+                    easing: 'swing'
+                });
+            });
+
+            /*
+             * 第三部分“案例”的更多按钮click事件
+             */
+            $('#more').click(function(){
+                var numAdded = 14;
+                if ($('.appended').length < 14)
+                    numAdded = $('.appended').length;
+
+
+                section3num++;
+                $('.appended:lt(' + numAdded + ')').removeClass('appended');
+
+                var section3Height = $(window).height() * section3num;
+                $('#third-section').height(section3Height);
+                $(document.body).height($(document.body).height() + (section3num - 1) * $(window).height());
+                resizeSectionHandler();
+
+                if ($('.appended').length == 0)
+                    $(this).remove();
+            });
+
+            /*
+             * window的resize事件
+             */
+            $(window).resize(function(){
+                resizeSectionHandler(); // 调整整体的高度
+
+                if (navigator.userAgent.indexOf("Chrome") > 0 || navigator.userAgent.indexOf("Safari") > 0)// 调整第三部分的高度
+                    resizeSection3Handler_ch();
+                else
+                    resizeSection3Handler_ff();
+            });
+
+
+
+            /********************************* 第四部分--联系我们动画 *************************************/
+            $(window).scroll(function(){
+                if (s.getScrollTop()>=($(document.body).height()- 1.5 * $(window).height())){
+                    setTimeout(function(){
+                        $('.email').transition({
+                            top: '0px',
+                            opacity: 1.0
+                        },{
+                            duration: 500,
+                            easing: 'ease'
+                        })
+
+                        setTimeout(function(){
+                            $('.qq').transition({
+                                top: '0px',
+                                opacity: 1.0
+                            },{
+                                duration: 500,
+                                easing: 'ease'
+                            })
+                        }, 200);
+                    }, 150);
+                }
+            });
+
+
+            /******************************* sea hover 事件 *****************************/
+            var ap = {
+                intro1:{
+                    'in':{
+                        width: '210px',
+                        height: '316px',
+                        top: '33px',
+                        left: '200px'
+                    },
+                    'out': {
+                        width: '0px',
+                        height: '0px',
+                        top: '352px',
+                        left: '306px'
+                    },
+                    'isMouseIn': false, // 互斥信号量
+                    'isMouseOut': false
+                },
+                intro2:{
+                    'in':{
+                        width: '210px',
+                        height: '316px',
+                        top: '-88px',
+                        left: '497px'
+                    },
+                    'out': {
+                        width: '0px',
+                        height: '0px',
+                        top: '232px',
+                        left: '600px'
+                    },
+                    'isMouseIn': false,
+                    'isMouseOut': false
+                },
+                intro3:{
+                    'in':{
+                        width: '210px',
+                        height: '316px',
+                        top: '-184px',
+                        right: '528px'
+                    },
+                    'out': {
+                        width: '0px',
+                        height: '0px',
+                        top: '132px',
+                        right: '633px' //636
+                    },
+                    'isMouseIn': false,
+                    'isMouseOut': false
+                },
+                intro4:{
+                    'in':{
+                        width: '210px',
+                        height: '316px',
+                        top: '18px',
+                        right: '384px'
+                    },
+                    'out': {
+                        width: '0px',
+                        height: '0px',
+                        top: '334px',
+                        right: '490px'
+                    },
+                    'isMouseIn': false,
+                    'isMouseOut': false
+                }
+            };
+
+            var introMouseover = function(id){
+                ap[id].isMouseIn = true;
+
+                if (!ap[id].isMouseOut)
+                {
+                    $('#' + id).animate({
+                        'backgroundSize': '0%'
+                    },{
+                        duration: 100,
+                        progress: function(){
+                            if (ap[id].isMouseOut)
+                            {
+                                ap[id].isMouseIn = false;
+                                $(this).stop();
+                                $(this).mouseout();
+                            }
+                        },
+                        complete: function(){
+                            $('#' + id + '-hover').animate(ap[id]['in'],{
+                                duration: 500,
+                                progress: function(){
+                                    if (ap[id].isMouseOut)
+                                    {
+                                        ap[id].isMouseIn = false;
+                                        $(this).stop();
+                                        $('#' + id).mouseout();
+                                    }
+                                },
+                                complete: function(){
+                                    $('#' + id + '-hover *').css('visibility', 'visible');
+                                    ap[id].isMouseIn = false;
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            var introMouseout = function(id){
+                ap[id].isMouseOut = true;
+
+                if (!ap[id].isMouseIn)
+                {
+                    $('#' + id + '-hover *').css('visibility', 'hidden');
+                    $('#' + id + '-hover').animate(ap[id].out,{
+                        duration: 500,
+                        progress: function(){
+                            if (ap[id].isMouseIn)
+                            {
+                                ap[id].isMouseOut = false;
+                                $(this).stop();
+                                $('#' + id).mouseover();
+                            }
+                        },
+                        complete: function(){
+                            $('#' + id).animate({
+                                        backgroundSize: '70%'
+                                    },
+                                    {
+                                        duration: 100,
+                                        progress: function(){
+                                            if (ap[id].isMouseIn)
+                                            {
+                                                ap[id].isMouseOut = false;
+                                                $(this).stop();
+                                                $('#' + id).mouseover();
+                                            }
+                                        },
+                                        complete: function(){
+                                            ap[id].isMouseOut = false;
+                                        }
+                                    });
+                        }
+                    });
+                }
+            }
+
+            $('#intro1, #intro2, #intro3, #intro4').on('mouseover', function(){
+                clearInterval(timer);
+                var id = $(this).attr('id');
+                introMouseover(id);
+            });
+
+            $('#intro1, #intro2, #intro3, #intro4').on('mouseout',function(e){
+                clearInterval(timer);
+                var id = $(this).attr('id');
+                if (e.toElement != $('#' + id + '-hover')[0]) {
+                    introMouseout(id);
+                }
+            });
+
+            $('#intro1-hover, #intro2-hover, #intro3-hover, #intro4-hover').on('mouseover', function(e){
+                var id = 'intro' + $(this).attr('id').replace(/[^0-9]/ig,"");
+                if ($(this).width() == 0) {
+                    introMouseover(id);
+                }
+            });
+
+            $('#intro1-hover *, #intro2-hover *, #intro3-hover *, #intro4-hover *').on('mouseover', function(e){
+                e.preventDefault(e);
+                return false;
+            });
+
+            $('#intro1-hover, #intro2-hover, #intro3-hover, #intro4-hover').on('mouseout', function(e){
+                var id = 'intro' + $(this).attr('id').replace(/[^0-9]/ig,"");
+                if (e.toElement != $('#' + id)[0] &&
+                        e.toElement != $('#' + id + '-hover h3')[0] &&
+                        e.toElement != $('#' + id + '-hover .desc')[0] &&
+                        e.toElement != $(this)[0]) {
+                    introMouseout(id);
+                }
+            });
+
+
+            /*
+            *   随机轮播函数
+            */
+            var preId = -1; //前一个轮播的id
+            var showNext = function(){
+
+                var id = Math.ceil(Math.random()*4);
+                if(id === preId)
+                    id = (id===4) ? 1: (id+1);
+                introMouseover('intro'+id);
+
+                setTimeout(function(){
+                    introMouseout('intro'+id);
+                }, 1100);
+
+                preId = id;
+            };
+
+            /*
+            *  初始状况所有都展现
+            *
+            */
+
+            var showAll = function(){
+                var id = 1;
+                for(id = 1; id < 5; id++)
+                    introMouseover('intro'+id);
+            }
+
+            var hideAll = function(callback){
+                setTimeout(function(){
+                    introMouseout('intro3');
+                }, 30100);
+                setTimeout(function(){
+                    introMouseout('intro4');
+                }, 30500);
+                setTimeout(function(){
+                    introMouseout('intro2');
+                }, 30800);
+                setTimeout(function(){
+                    introMouseout('intro1');
+                    callback();
+                }, 31000);
+            }
+
+            var timer;
+            var hasEnterToSecondIndex = false;
+            $(document.body).on('scrollToIndex', function(e, index){
+                if (index === 1 && !hasEnterToSecondIndex) {
+                    showAll();
+                    hideAll(function(){
+                        timer = setInterval(showNext, 2200);
+                    });
+                    hasEnterToSecondIndex = true;
+                }
+            })
+
+        });
+    </script>
+</body>
+</html>

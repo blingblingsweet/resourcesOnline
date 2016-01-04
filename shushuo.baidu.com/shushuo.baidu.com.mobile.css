@@ -1,0 +1,965 @@
+/*app.css*/
+.tip {
+    position: absolute
+}
+.tip .hit {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -6px;
+    right: 0
+}
+.tip.hit-bottom-middle .hit {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, .5);
+    left: 50%;
+    margin-left: -5px
+}
+.tip.hit-bottom-left .hit {
+    border-right: 5px solid transparent;
+    border-left: 0 solid transparent;
+    left: 0
+}
+.tip.hit-bottom-right .hit {
+    border-left: 5px solid transparent;
+    border-right: 0 solid transparent;
+    right: 0;
+    margin-left: -5px
+}
+.tip.hit-left .hit {
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 6px solid rgba(0, 0, 0, .5);
+    top: 50%;
+    margin-top: -5px;
+    left: -11px
+}
+.tip.hit-right .hit {
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-left: 6px solid rgba(0, 0, 0, .5);
+    top: 50%;
+    margin-top: -5px;
+    right: -11px
+}
+.tip-beat {
+    -webkit-animation: tip-beat .5s
+}
+@-webkit-keyframes tip-beat {
+    0% {
+        -webkit-transform: scale(0.3);
+        opacity: .5
+    }
+    50% {
+        -webkit-transform: scale(1.2)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1
+    }
+}
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 1
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    -webkit-transition-property: -webkit-transform, left, top;
+    -webkit-transition-duration: 0s;
+    -webkit-transform: translate3d(0px, 0, 0);
+    -webkit-transition-timing-function: ease;
+    -moz-transition-property: -moz-transform, left, top;
+    -moz-transition-duration: 0s;
+    -moz-transform: translate3d(0px, 0, 0);
+    -moz-transition-timing-function: ease;
+    -o-transition-property: -o-transform, left, top;
+    -o-transition-duration: 0s;
+    -o-transition-timing-function: ease;
+    -o-transform: translate(0px, 0);
+    -ms-transition-property: -ms-transform, left, top;
+    -ms-transition-duration: 0s;
+    -ms-transform: translate3d(0px, 0, 0);
+    -ms-transition-timing-function: ease;
+    transition-property: transform, left, top;
+    transition-duration: 0s;
+    transform: translate3d(0px, 0, 0);
+    transition-timing-function: ease
+}
+.swiper-free-mode>.swiper-wrapper {
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin: 0 auto
+}
+.swiper-slide {
+    float: left
+}
+.swiper-wp8-horizontal {
+    -ms-touch-action: pan-y
+}
+.swiper-wp8-vertical {
+    -ms-touch-action: pan-x
+}
+.bubble-container {
+    position: relative;
+    width: 50%;
+    height: auto;
+    color: #FFF;
+    overflow: visible;
+    float: left
+}
+.bubble-container ul {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.bubble-container ul li {
+    height: 40px;
+    line-height: 40px
+}
+.bubble-container .value {
+    font-size: 16px
+}
+.bubble-container .company {
+    font-size: 12px
+}
+.bubble-container .left {
+    left: 8px
+}
+.bubble-container .right {
+    right: 8px
+}
+.bubble-container .bubble {
+    background-color: #fff;
+    border-radius: 100px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-box-shadow: 2px 4px 12px rgba(9, 27, 159, .15);
+    -webkit-background-clip: padding-box;
+    -webkit-transition: .9s
+}
+.bubble-container .bubble.color0 {
+    background-image: -webkit-linear-gradient(93deg, rgba(186, 239, 57, .57)0, rgba(109, 223, 24, .57)100%)
+}
+.bubble-container .bubble.color1 {
+    background-image: -webkit-linear-gradient(93deg, rgba(179, 197, 144, .57)0, rgba(228, 239, 64, .57)100%)
+}
+.bubble {
+    font-size: 20px
+}
+.bubble-num {
+    font-family: PTDINCond
+}
+html {
+    margin: 0;
+    height: 100%
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    line-height: 1.5;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    position: relative;
+    font-family: Avenir
+}
+h3.t1 {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+    padding: 0;
+    line-height: 16px;
+    margin: 0
+}
+h4.t2 {
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 400;
+    padding: 0;
+    line-height: 12px;
+    margin: 0
+}
+.img-r {
+    display: inline-block;
+    background-image: url(./shushuo.baidu.com.mobile.images/all.png);
+    background-repeat: no-repeat;
+    background-size: 270px
+}
+.total-container {
+    overflow: hidden;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000
+}
+.total-container#cover {
+    background-image: url(./shushuo.baidu.com.mobile.images/coverbg.jpg);
+    background-size: cover;
+    z-index: 11
+}
+.total-container#cover>.title {
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    margin-left: -105px;
+    margin-top: -200px;
+    -webkit-perspective: 700px
+}
+.total-container#cover>.title>img {
+    -webkit-transform: rotateY(-30deg)
+}
+.total-container#cover>.cols {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate3d(-280px, 200px, 0)
+}
+.total-container#back {
+    background-image: url(./shushuo.baidu.com.mobile.images/coverbg.jpg);
+    background-size: cover;
+    z-index: 9
+}
+.total-container#back>.header {
+    padding: 21px;
+    position: relative
+}
+.total-container#back>.header>.share, .total-container#back>.header>img {
+    vertical-align: top;
+    display: inline-block
+}
+.total-container#back>.header>.share {
+    float: right;
+    text-align: right;
+    background: url(http://shushuo.baidu.com/act/webtrend/img/share.png) no-repeat;
+    background-size: 114px;
+    width: 114px;
+    height: 77px
+}
+.total-container#back>.more {
+    text-align: center
+}
+.total-container#back>h2 {
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 0;
+    margin: 5px 25px;
+    font-weight: 400
+}
+.total-container#back>h2:nth-child(3) {
+    border-top: 2px solid #fff
+}
+.total-container#back>ul {
+    list-style: none;
+    color: #fff;
+    padding: 5px 0;
+    margin: 0 25px;
+    border-bottom: 1px solid #fff
+}
+.total-container#back>ul:last-child {
+    border-bottom: 2px solid #fff
+}
+.total-container#back>ul>li>img {
+    vertical-align: middle;
+    margin-right: 10px
+}
+.total-container#cover>.logo {
+    text-align: center;
+    margin-top: 20px
+}
+header {
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    text-align: center;
+    width: 100%
+}
+.content-outer {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    vertical-align: middle
+}
+.content-outer>.number {
+    font-size: 36px;
+    color: #fff;
+    padding: 0 6px 0 13px;
+    display: block;
+    height: 2em
+}
+.content-outer>.number.page9 {
+    font-size: 24px;
+    height: auto
+}
+.content-outer:first-child {
+    border-right: 2px solid rgba(255, 255, 255, .2)
+}
+.content-outer>h1.title {
+    font-size: 20px;
+    padding: 0 0 0 10px;
+    float: right;
+    color: #fff;
+    margin: 0;
+    font-weight: 400;
+    text-align: left
+}
+.content-outer>h1.title>.btn {
+    vertical-align: top
+}
+#bg {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 100%
+}
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    z-index: 2
+}
+footer>p {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0
+}
+.arrow-up {
+    position: relative;
+    display: inline-block;
+    top: 3px;
+    width: 19px;
+    height: 13px;
+    background: url(./shushuo.baidu.com.mobile.images/icons.png) no-repeat center center;
+    background-size: 22px;
+    background-position: -2px -250px;
+    -webkit-animation: up-fade 1s ease 0s infinite
+}
+@-webkit-keyframes up-fade {
+    0% {
+        opacity: 1
+    }
+    100% {
+        -webkit-transform: translate3d(0px, -5px, 0);
+        opacity: .5
+    }
+}
+/*#chart-area {
+    width: 100%;
+    position: absolute;
+    top: 53px;
+    z-index: 2
+}
+#word-area {
+    width: 100%;
+    position: absolute;
+    bottom: 163px;
+    z-index: 2
+}*/
+#chart-area.page9 {
+    top: 60px
+}
+#bubble-container>.legend {
+    margin-top: 20px
+}
+#bubble-container #bubble1 {
+    border-right: 1px solid rgba(255, 255, 255, .5)
+}
+#bubble-container {
+    text-align: center
+}
+#bubble-container>.chart-container {
+    height: 160px;
+    width: 49%;
+    display: inline-block;
+    position: relative
+}
+#bubble-container>.chart-container>h1, #bubble-container>.chart-container>h2 {
+    color: #fff;
+    font-weight: 400;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0
+}
+#bubble-container>.chart-container>h1 {
+    font-size: 15px;
+    bottom: -6px
+}
+#bubble-container>.chart-container>h2 {
+    font-size: 12px;
+    bottom: -20px
+}
+#bubble-container .color-top {
+    -webkit-box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    background-image: -webkit-linear-gradient(bottom, rgba(251, 144, 4, .95)0, rgba(255, 168, 0, .95)100%)
+}
+#bubble-container .color-bottom {
+    -webkit-box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    background-image: -webkit-linear-gradient(bottom, rgba(251, 198, 4, .95)0, rgba(252, 245, 4, .95)100%)
+}
+#area-container>#area {
+    height: 70%
+}
+#area-container>.legend>.legend-block>.btn {
+    vertical-align: top
+}
+#area-container>.legend>.legend-block:first-child {
+    margin-right: 0
+}
+#bubble-container, #column2, #column3 {
+    height: 70%;
+    margin-top: 20px
+}
+#column2-container>.mask-box {
+    position: absolute;
+    width: 20%;
+    height: 65%;
+    top: 5%;
+    right: 26%
+}
+.legend {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px
+}
+.legend>.legend-block:first-child {
+    margin-right: 45px
+}
+.legend>.legend-block {
+    display: inline-block
+}
+.legend>.legend-block:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px
+}
+.mask {
+    position: absolute;
+    z-index: 10;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0
+}
+.mask>.msg-box {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    min-height: 270px;
+    width: 200px;
+    margin: 100px auto;
+    padding: 0;
+    color: #333;
+    position: relative
+}
+.mask>.msg-box>.msg-header {
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    padding: 0 10px
+}
+.mask>.msg-box>.msg-body {
+    padding: 0 10px
+}
+.mask>.msg-box>.msg-body>h2 {
+    font-size: 12px
+}
+.mask>.msg-box>.msg-body>ul {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+.mask>.msg-box>.msg-footer {
+    border-top: 1px solid #ccc;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+.mask>.msg-box>.msg-footer:active {
+    background: #eee
+}
+#area-container>.legend>.legend-block:nth-child(1):before {
+    background: #07b4fd
+}
+#area-container>.legend>.legend-block:nth-child(2):before {
+    background: #7fde22
+}
+#area-container>.legend>.legend-block:nth-child(3):before {
+    background: #b6a721
+}
+#area-container>.legend>.legend-block:nth-child(4):before {
+    background: #c7743c
+}
+#column2-container>.legend>.legend-block:first-child:before {
+    background: #fbd204
+}
+#column2-container>.legend>.legend-block:last-child:before {
+    background: #da0f04
+}
+#column3-container>.legend>.legend-block:first-child:before {
+    background: #fbd204
+}
+#column3-container>.legend>.legend-block:last-child:before {
+    background: #8ce829
+}
+#bubble-container>.legend>.legend-block:first-child:before {
+    background-image: -webkit-linear-gradient(bottom, rgba(251, 198, 4, .95)0, rgba(252, 245, 4, .95)100%)
+}
+#bubble-container>.legend>.legend-block:last-child:before {
+    background-image: -webkit-linear-gradient(bottom, rgba(251, 144, 4, .95)0, rgba(255, 168, 0, .95)100%)
+}
+#donut0-container>.legend>.legend-block:nth-child(1):before {
+    background: #46dffa
+}
+#donut0-container>.legend>.legend-block:nth-child(2):before {
+    background: #70ce00
+}
+#donut0-container>.legend>.legend-block:nth-child(3):before {
+    background: #ddca00
+}
+#donut0-container>.legend>.legend-block:nth-child(4):before {
+    background: #f68500
+}
+#column2-container>.mask-box>.btn {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: -10px
+}
+#donut0-container .icon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-image: url(./shushuo.baidu.com.mobile.images/icons.png);
+    background-size: 22px;
+    background-repeat: no-repeat
+}
+#donut0-container .icon.baidu {
+    background-position: 0 0
+}
+#donut0-container>.legend>.legend-block:first-child {
+    margin-right: 0
+}
+.icon.baiduzhushou {
+    background-position: 0 -36px
+}
+.icon.android {
+    background-position: 0 -184px
+}
+.icon.m91 {
+    background-position: 0 -146px
+}
+#donut0-container .shadow {
+    position: absolute;
+    border-radius: 150px;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    -webkit-transition: 500ms
+}
+#donut0-container .inner-shadow {
+    width: 84px;
+    height: 84px;
+    margin-left: -42px;
+    margin-top: -42px;
+    z-index: 1;
+    box-shadow: 0 17px 20px rgba(0, 0, 0, .1)inset
+}
+#donut0-container .outer-shadow {
+    width: 156px;
+    height: 156px;
+    margin-left: -78px;
+    margin-top: -78px;
+    z-index: 2;
+    box-shadow: 0 17px 20px rgba(0, 0, 0, .1)
+}
+#donut0-container>.qselect {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5
+}
+#donut0-container>.qselect>li {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background: rgba(51, 0, 0, .3);
+    padding: 5px 10px;
+    margin: 0
+}
+#donut0-container>.qselect>li.active {
+    background: #fff;
+    color: #61297a;
+    position: relative
+}
+#radars {
+    height: 100%
+}
+#radars text {
+    fill: #fff
+}
+#radars .radar-chart {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+#donut-container {
+    height: 100%;
+    width: 100%
+}
+#radars>ul.user-type {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: center
+}
+#radars>ul.user-type>li {
+    display: inline-block;
+    color: #fff;
+    font-size: 9px;
+    background-color: rgba(0, 0, 0, .3);
+    margin: 0;
+    margin-right: 2px;
+    padding: 8px 5px;
+    position: relative
+}
+#radars>ul.user-type>li:before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px
+}
+#radars>ul.user-type>li:nth-child(1):before {
+    background: #fffc00
+}
+#radars>ul.user-type>li:nth-child(2):before {
+    background: #5ce700
+}
+#radars>ul.user-type>li:nth-child(3):before {
+    background: #f99
+}
+#radars>ul.user-type>li:nth-child(4):before {
+    background: #00f0ff
+}
+#radars>ul.user-type>li.active {
+    color: #039454;
+    background: #fff;
+    box-shadow: 0 17px 20px 20px rgba(0, 0, 0, .1)
+}
+#donut0-container>.qselect>li.active:after, #radars>ul.user-type>li.active:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid dashed dashed;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    display: block;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -7px
+}
+#radars>.row {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    margin: 0 15px;
+    width: 100%
+}
+#radars>.row:last-child {
+    border-bottom: none
+}
+#radars>.row>h1 {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    width: 15px;
+    line-height: 15px
+}
+#lights {
+    padding: 0 15px
+}
+#lights>.row>.round {
+    width: 105px;
+    height: 105px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: 0 17px 20px 20px rgba(0, 0, 0, .1)
+}
+#lights>.row>.round, #lights>.row>h2 {
+    display: inline-block;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 400
+}
+#lights>.row>h2 {
+    line-height: 105px;
+    height: 105px;
+    padding: 0;
+    margin: 0 20px
+}
+#lights>.row>.round>h1 {
+    font-size: 27px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 105px;
+    margin: 0;
+    padding: 0
+}
+#lights>.row>.round#round1 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#4fc420), to(#5cd729));
+    float: right;
+    -webkit-transform: scale(5) translateX(-200px)
+}
+#lights>.row>.round#round2 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#bab714), to(#d5d21e));
+    float: left;
+    -webkit-transform: scale(5) translateX(200px)
+}
+#lights>.row>.round#round3 {
+    background: -webkit-gradient(linear, left top, left bottom, from(#1bbba3), to(#22d1b6));
+    float: right;
+    -webkit-transform: scale(5) translateX(-200px)
+}
+#lights>.row>.light {
+    position: absolute;
+    z-index: -1
+}
+#lights>.row>.light#light1 {
+    right: 60px;
+    -webkit-transform: scale(0.01)
+}
+#lights>.row>.light#light2 {
+    left: 60px;
+    -webkit-transform: scale(0.01)
+}
+#lights>.row>.light#light3 {
+    right: 60px;
+    -webkit-transform: scale(0.01)
+}
+.chart-container.donut {
+    position: relative;
+    height: 200px;
+    top: -10px;
+    overflow: hidden
+}
+.center, .chart-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+#donut2 {
+    overflow: hidden
+}
+#text-container {
+    width: 290px;
+    margin: 0 auto
+}
+#text-container>h1 {
+    height: 42px;
+    color: #ce3b5b;
+    font-size: 17px;
+    background-size: 290px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 0;
+    margin: 0;
+    font-weight: 400
+}
+#text-container>p {
+    margin: -10px 16px 10px 5px;
+    text-align: justify
+}
+#text-container>h1>span.t-title {
+    margin-top: 3px
+}
+#text-container>h1>.t-number {
+    color: #fff;
+    width: 23px;
+    text-align: center;
+    margin-left: 4px;
+    background: rgba(0, 0, 0, .2);
+    vertical-align: top;
+    height: 28px
+}
+#text-container>h1>span {
+    display: inline-block;
+    height: 28px;
+    margin-top: 1px;
+    margin-right: 3px
+}
+#text-container>h1 {
+    background-image: url(./shushuo.baidu.com.mobile.images/t-bg.png)
+}
+#text-container>h1:nth-child(3) {
+    background-position: 0 -47px
+}
+#text-container>h1:nth-child(5) {
+    background-position: 0 -94px
+}
+#text-container>h1:nth-child(7) {
+    background-position: 0 -141px
+}
+#text-container>p:nth-child(2) {
+    color: #e7cb7b
+}
+#text-container>p:nth-child(4) {
+    color: #c1d4a9
+}
+#text-container>p:nth-child(6), #text-container>p:nth-child(8) {
+    color: #d3c8e5
+}
+#templates {
+    display: none
+}
+.distribute-center {
+    background-color: #ff0;
+    -webkit-box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    box-shadow: 0 17px 20px rgba(0, 0, 0, .1);
+    background-image: -webkit-linear-gradient(bottom, #f9c503 0, #fbf303 100%);
+    background-image: linear-gradient(bottom, #f9c503 0, #fbf303 100%);
+    border-radius: 200px;
+    width: 98px;
+    height: 98px;
+    text-align: center;
+    line-height: 100px;
+    color: #852e6c;
+    font-size: 18px
+}
+.img-r.cover-s {
+    width: 84px;
+    height: 96px;
+    background-position: -93px -227px
+}
+.img-r.shushuo {
+    width: 54px;
+    height: 18px;
+    background-position: -58px -374px
+}
+.img-r.mux {
+    width: 54px;
+    height: 18px;
+    background-position: 2px -372px
+}
+.img-r.sharearrow {
+    width: 54px;
+    height: 47px;
+    background-position: 2px -469px
+}
+.img-r.more {
+    width: 270px;
+    height: 55px;
+    background-position: 0 -517px
+}
+.img-r.mobile-logo {
+    width: 105px;
+    height: 35px;
+    background-position: 0 -328px
+}
+.img-r.footer {
+    width: 59px;
+    height: 19px;
+    background-position: 0 -298px
+}
+.img-r.question1 {
+    width: 34px;
+    height: 34px;
+    background-position: 0 -401px
+}
+.img-r.user {
+    width: 29px;
+    height: 23px;
+    background-position: -5px -434px
+}
+.img-r.light {
+    width: 202px;
+    height: 110px;
+    background-position: 0 -113px
+}
+.img-r.light2 {
+    width: 202px;
+    height: 110px;
+    background-position: 0 -5px
+}
+.img-r.developer {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -265px
+}
+.img-r.daybrocast {
+    width: 22px;
+    height: 22px;
+    background-position: 0 -231px
+}
+#loading {
+    background: rgba(0, 0, 0, .8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100
+}
+#spinner {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    left: 50%;
+    top: 50%;
+    margin-left: -22px;
+    margin-top: -22px;
+    background: url(./shushuo.baidu.com.mobile.images/loading.png);
+    background-size: 45px;
+    -webkit-animation: rotate 1.5s linear infinite
+}
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
